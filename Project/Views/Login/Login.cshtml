@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+
+
+@model Project.Models.LoginModel
+
+
+@{
+    
+    Layout = null;
+}
+
+
+
+@* <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <from>
+     <form id="Login" method="post" class="form">
+        <h1>Login From</h1>
+        <label for="id">User ID:</label>
+        <input type="text" id="Id" name="id" required />
+
+        <br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="Password" name="password" required />
+
+        <br />
+
+        <button type="submit">Login</button>
+        
+     </form>    
+    <br />
+    <div class="text-center">
+        <a class="text-light btn btn-primary font-weight-bold" asp-action="Registration" asp-controller="Login">Registration</a>
+
+    </div>
+    </from>
+
+</body>
+</html> *@
+@* New Code *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .form-group input {
+                width: 100%;
+                padding: 8px;
+                box-sizing: border-box;
+            }
+
+        .form-error {
+            background-color: #ffcccc; /* Red background color */
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+            text-align: center; /* Center the error message */
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="login-form" id="Login" method="post">
+            <h2>Login Form</h2>
+            <div class="form-group">
+                <label for="id">User ID:</label>
+                <input type="text" id="Id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="Password" name="password" required>
+            </div>
+            <button type="submit" class="btn-primary">Login</button>
+            @* Error message shown only if there's an error *@
+            @if (ViewData["LoginFlag"] != null)
+            {
+                <div class="form-error">@ViewData["LoginFlag"]</div>
+            }           
+        </form>
+        
+    </div>
+    <br />
+    <div class="text-center">
+        <a class="text-light btn btn-primary font-weight-bold" asp-action="Registration" asp-controller="Login">Registration</a>
+    </div>
+    
+</body>
+</html>
+
+

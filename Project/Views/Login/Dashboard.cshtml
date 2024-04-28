@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard For Testing</h1>
+@model Project.Models.PersonModel
+
+
+
+<div class="container shadow p-5">
+
+
+
+    <div class="col mb-3">
+        
+        <a class="text-light btn btn-primary font-weight-bold" asp-action="Create" asp-controller="Login">Add Employee</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in ViewBag.data)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.FirstName
+                    </td>
+                    <td>
+                        @item.LastName
+                    </td>
+                    <td>
+                        @item.Age
+                    </td>
+                    <td>
+                        <div role="group" class="w-60 btn-group">
+                            
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i>delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+
+      </tbody>
+   @*  </table>
+    <h2>People List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.FirstName</td>
+                    <td>@person.LastName</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@person.Id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@person.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table> *@
+</div>

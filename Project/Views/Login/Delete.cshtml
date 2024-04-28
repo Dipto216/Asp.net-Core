@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    ViewData["Title"] = "Delete";
+}
+@model Project.Models.PersonModel
+
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Delete Employee</h2>
+    </div>
+
+    <form method="post" asp-action="Delete">
+        <input asp-for="Id" hidden />
+        <div asp-validation-summary="All"></div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="FirstName">Employee Name</label>
+                <input type="text" class="form-control mb-3" asp-for="FirstName" disabled>
+                <span asp-validation-for="FirstName" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="LastName">Designation</label>
+                <input type="text" class="form-control mb-3" asp-for="LastName" disabled>
+                <span asp-validation-for="LastName" class=" alert-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="Age">Designation</label>
+                <input type="text" class="form-control mb-3" asp-for="Age" disabled>
+                <span asp-validation-for="Age" class=" alert-danger"></span>
+            </div>
+        </div>
+
+       
+
+        <button type="submit" class="btn btn-lg btn-danger p-2"><i class="bi bi-trash-fill"></i>Delete</button>
+        <a asp-controller="Login" asp-action="Dashboard" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>
+
+

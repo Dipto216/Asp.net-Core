@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Project.Models.PersonModel
+
+<div class="container shadow p-5">
+    <div class="row pb-2">
+        <h2>Add Employee</h2>
+    </div>
+
+    <form id="Create" method="post" class="form">
+        
+        <label for="id">ID </label>
+        <input type="text" id="Id" name="id" required />
+
+        <br />
+
+        <label for="firstname">First Name</label>
+        <input type="firstname" id="Firstname" name="firstname" required />
+
+        <br />
+        <label for="lastname">Last Name</label>
+        <input type="lastname" id="Lastname" name="lastname" required />
+
+        <br />
+        <label for="age">Age</label>
+        <input type="text" id="Age" name="age" required />
+
+        <br />
+
+         <button type="submit" class="btn btn-lg btn-primary p-2"><i class="bi bi-file-plus-fill"></i>Save</button> 
+@*         <button type="submit">Save</button> *@
+        <a asp-controller="Login" asp-action="Dashboard" class="btn btn-lg btn-warning p-2">Back To List</a>
+    </form>
+
+</div>

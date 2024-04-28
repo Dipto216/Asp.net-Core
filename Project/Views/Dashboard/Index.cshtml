@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<Project.Models.PersonModel>
+
+    //not work this page
+
+
+<div class="container shadow p-5">
+
+    
+
+    <div class="col mb-3">
+        <a asp-controller="PersonModel" asp-action="Create" class="btn btn-lg btn-primary"><i class="bi bi-file-plus-fill"></i>Add Employee</a>
+    </div>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        <div role="group" class="w-60 btn-group">
+                            <a asp-controller="PersonModel" asp-action="Edit" asp-route-id="@item.Id" class=" btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i>Edit</a>&nbsp;
+                            <a asp-controller="PersonModel" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger"><i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
