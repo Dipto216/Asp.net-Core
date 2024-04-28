@@ -249,3 +249,4 @@ E:\C#consol\Project\Project\obj\Debug\net6.0\Project.pdb
 E:\C#consol\Project\Project\obj\Debug\net6.0\Project.genruntimeconfig.cache
 E:\C#consol\Project\Project\obj\Debug\net6.0\ref\Project.dll
 E:\C#consol\Project\Project\obj\Debug\net6.0\Project.csproj.Up2Date
+E:\C#consol\Project\Project\obj\Debug\net6.0\Project.sourcelink.json
